@@ -182,13 +182,13 @@ main
 ## Preprocessing of image
 ---
 >Preprocessing of the captured image from the camera
-![](media\pagetransformation.gif)
+![](pagetransformation.gif)
 
 ## Instruction to set physical setup
 ---
 >Sample setup is shown
 
-<img src="media\setup-oakd.jpg" width="500" height="400">
+<img src="setup-oakd.jpg" width="500" height="400">
 
 
 
@@ -216,7 +216,7 @@ Consider the following image:
 
 Text is highlighted in the Red
 Math expressions are highlighted in green
-<img src="media\inferences/left_page6.jpg" width="800" height="800">
+<img src="left_page6.jpg" width="800" height="800">
 
 
 ## Output from the model
