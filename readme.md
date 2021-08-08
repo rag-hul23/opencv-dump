@@ -87,6 +87,13 @@ main
 >2. The holder is firmly attached to a table and Raised to 40cm from book
 >3. Etc if any
 
+## Spatial guidance 
+---
+>The user is provided spatial direction and voice assistance to fit the book inside the frame. The book is recognised using OAK-D, and the spatial coordinates of the book are utilised to help the user in placing the book to fit inside the frame.
+![](Spatial-guidance.gif)
+
+
+
 ## Training dataset
 1. loren ipsum.
    - lorem ipsum
