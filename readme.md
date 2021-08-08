@@ -3,7 +3,8 @@
 Ref: https://www.tensorflow.org/tutorials/images/transfer_learning_with_hub
 ## Introduction:
 ---
-This repo contains the training and impletation of converting Scientific literature to Braille format which then can be printed using a braille printer if available. 
+Textual descriptions found in books can be made available to visually impaired persons in the form of audio output as audio books, as previously stated. In contrast to written material, sophisticated mathematical/Physics equations presented in audio format, such as integral and differential equations, tend to be extremely difficult. This creates a significant barrier for persons with vision impairments to participate in academic research.
+To solve this issue, we propose a system that can recognise mathematical equations in a hard copy book and convert them to Nemeth Braille code, which may then be stored or printed if a Braille printer is available.
 
 ## Dependencies:
 ---
@@ -49,114 +50,11 @@ main
 │   └── README
 │
 ├── tesseract-ocr\
-│   ├── doc\
-│   │   ├── AUTHORS
-│   │   ├── LICENSE
-│   │   └── README.md
-│   │
-│   ├── tessdata\
-│   │   ├── configs\
-│   │   │   ├── alto
-│   │   │   ├── ambigs.train
-│   │   │   ├── api_config
-│   │   │   ├── bigram
-│   │   │   ├── box.train
-│   │   │   ├── box.train.stderr
-│   │   │   ├── digits
-│   │   │   ├── get.images
-│   │   │   ├── hocr
-│   │   │   ├── inter
-│   │   │   ├── kannada
-│   │   │   ├── linebox
-│   │   │   ├── logfile
-│   │   │   ├── lstm.train
-│   │   │   ├── lstmbox
-│   │   │   ├── lstmdebug
-│   │   │   ├── makebox
-│   │   │   ├── pdf
-│   │   │   ├── quiet
-│   │   │   ├── rebox
-│   │   │   ├── strokewidth
-│   │   │   ├── tsv
-│   │   │   ├── txt
-│   │   │   ├── unlv
-│   │   │   └── wordstrbox
-│   │   │
-│   │   ├── tessconfigs\
-│   │   │   ├── batch
-│   │   │   ├── batch.nochop
-│   │   │   ├── matdemo
-│   │   │   ├── msdemo
-│   │   │   ├── nobatch
-│   │   │   └── segdemo
-│   │   │
-│   │   ├── eng.traineddata
-│   │   ├── eng.user-patterns
-│   │   ├── eng.user-words
-│   │   ├── jaxb-api-2.3.1.jar
-│   │   ├── osd.traineddata
-│   │   ├── pdf.ttf
-│   │   ├── piccolo2d-core-3.0.jar
-│   │   ├── piccolo2d-extras-3.0.jar
-│   │   └── ScrollView.jar
-│   │
-│   ├── ambiguous_words.exe
-│   ├── classifier_tester.exe
-│   ├── cntraining.exe
-│   ├── combine_lang_model.exe
-│   ├── combine_tessdata.exe
-│   ├── dawg2wordlist.exe
-│   ├── iconv.dll
-│   ├── icudata57.dll
-│   ├── icui18n57.dll
-│   ├── icuuc57.dll
-│   ├── libbz2-1.dll
-│   ├── libcairo-2.dll
-│   ├── libexpat-1.dll
-│   ├── libffi-6.dll
-│   ├── libfontconfig-1.dll
-│   ├── libfreetype-6.dll
-│   ├── libgcc_s_sjlj-1.dll
-│   ├── libgif-7.dll
-│   ├── libglib-2.0-0.dll
-│   ├── libgobject-2.0-0.dll
-│   ├── libgomp-1.dll
-│   ├── libharfbuzz-0.dll
-│   ├── libintl-8.dll
-│   ├── libjbig-2.dll
-│   ├── libjpeg-8.dll
-│   ├── liblept-5.dll
-│   ├── liblzma-5.dll
-│   ├── libopenjp2.dll
-│   ├── libpango-1.0-0.dll
-│   ├── libpangocairo-1.0-0.dll
-│   ├── libpangoft2-1.0-0.dll
-│   ├── libpangowin32-1.0-0.dll
-│   ├── libpcre-1.dll
-│   ├── libpixman-1-0.dll
-│   ├── libpng16-16.dll
-│   ├── libstdc++-6.dll
-│   ├── libtesseract-4.dll
-│   ├── libtiff-5.dll
-│   ├── libwebp-7.dll
-│   ├── libwinpthread-1.dll
-│   ├── lstmeval.exe
-│   ├── lstmtraining.exe
-│   ├── merge_unicharsets.exe
-│   ├── mftraining.exe
-│   ├── set_unicharset_properties.exe
-│   ├── shapeclustering.exe
-│   ├── tesseract-uninstall.exe
-│   ├── tesseract.exe
-│   ├── text2image.exe
-│   ├── unicharset_extractor.exe
-│   ├── wordlist2dawg.exe
-│   └── zlib1.dll
 │
 ├── braille_map.json           #json file for mapping text to braille text
 ├── content_to_braille.py      #Pyscript to convert text and image content to braille
 ├── image_to_content.py        #pyscript to convert image to Latex
-├── layout_parser.py           
+├── layout_parser.py          
 ├── main.py
 ├── mathpix.py                 #Pyscript to convert convert image to latex through mathpix
 ├── preprocess_page.py         
@@ -166,13 +64,6 @@ main
 ├── temp0.nemeth
 └── template.aux
 ```
-
-1. loren ipsum.
-   - lorem ipsum
-     - loremipsum 
-     - 
-2. Model was trained using
-   [Transfer Learning of Tensorflow Mobilenet V2 image classification](https://tfhub.dev/s?module-type=image-classification&q=tf2) model
 
 ## Image collection for Training
 ---
@@ -195,6 +86,25 @@ main
 >1. OAK-D is place in the camera holder and connected to the host pc
 >2. The holder is firmly attached to a table and Raised to 40cm from book
 >3. Etc if any
+
+## Training dataset
+1. loren ipsum.
+   - lorem ipsum
+     - loremipsum 
+     - 
+2. Model was trained using
+   [Transfer Learning of Tensorflow Mobilenet V2 image classification](https://tfhub.dev/s?module-type=image-classification&q=tf2) model
+   
+## Training dataset
+---
+Details | - 
+--- | --- 
+**Type** | Images from Physics and Science books
+**Training set** | #### images
+**Testing set** | ### images
+**Image size** | (300 x 300)
+**No. of Classes 5 classes** | Text, Equation, Background
+**Dataset** | [Click Here](if we wish to add our dataset)
 
 ## Performance metrics of YOLOV3 model
 
