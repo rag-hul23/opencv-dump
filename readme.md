@@ -131,5 +131,11 @@ Math expressions are highlighted in green
 
 ## Output from the model
 ---
->Text portion of the book is dictated upon user instruction 
+>Text portion of the captured image is dictated upon user instruction, After completion the User is instructed to turn to next page
 >Braille format of each page read is stored as .nemeth file in the /main directory which canbe printed using the Braille printer
+
+
+## References
+---
+[Yolo v4, v3 and v2 for Windows and Linux](https://github.com/AlexeyAB/darknet/blob/master/README.md)
+[YOLOv4: Optimal Speed and Accuracy of Object Detection](https://arxiv.org/abs/2004.10934)
